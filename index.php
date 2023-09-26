@@ -2,6 +2,11 @@
 /**
  * Dev tools
  */
+require_once __DIR__.'/src/JsonTools.php';
+
+restore_exception_handler();
+restore_error_handler();
+
 const TOOLS_DIR = __DIR__ . '/tools/';
 
 function listTools(): array
