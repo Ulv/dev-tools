@@ -2,11 +2,9 @@
 /**
  * Dev tools
  */
-require_once __DIR__ . '/src/JsonTools.php';
-require_once __DIR__ . '/src/SwagIt.php';
-require_once __DIR__ . '/src/Timestamp.php';
 
 const TOOLS_DIR = __DIR__ . '/tools/';
+const SRC_DIR   = __DIR__ . '/src';
 
 function listTools(): array
 {
@@ -22,6 +20,13 @@ function listTools(): array
     return $result;
 }
 
+spl_autoload_register(function ($class) {
+    $classFile = str_replace('\\', '/', $class) . '.php';
+    $filePath  = SRC_DIR . '/' . $classFile;
+    if (file_exists($filePath)) {
+        require_once $filePath;
+    }
+});
 ?>
 <!DOCTYPE html>
 <html lang="en">
