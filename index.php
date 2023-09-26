@@ -37,11 +37,12 @@ function listTools(): array
 <div class="container">
     <div class="row">
         <div class="twelve columns">
-            <a class="button button-primary" href="/">Home</a>
+            <strong>DEV TOOLS</strong>&nbsp;
+            <a class="button" href="/">Home</a>&nbsp;
             <?php
             $tools = listTools();
             foreach ($tools as $tool) {
-                echo "<a class='button button-primary' href='/?tool=$tool'>$tool</a>";
+                echo "<a class='button button-primary' href='/?tool=$tool'>$tool</a> &nbsp;";
             }
             ?>
         </div>
