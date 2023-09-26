@@ -74,9 +74,6 @@ spl_autoload_register(function ($class) {
             require_once TOOLS_DIR . '/' . $route . '.php';
         } else {
             ?>
-            <div class="twelve columns">click any button for tool ^</div>
-            <br><br>
-            <h2>Readme:</h2>
             <pre><code><?php echo include 'README.md'; ?></code></pre>
             <?php
         }
