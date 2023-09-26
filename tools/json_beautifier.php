@@ -14,7 +14,7 @@ $jsonTools = new JsonTools($_POST['json_text'] ?? '');
     <div class="one-half column">
         <div class="row">
             <div class="twelve columns">
-                <button class="button u-pull-right" onclick="copy2Clipboard()">Copy2Clipboard</button>
+                <button class="button u-pull-right" onclick="copy2Clipboard()">Copy</button>
             </div>
         </div>
         <pre><code id="code"><?php echo $jsonTools->getBeautifiedJson(); ?></code></pre></div>
