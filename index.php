@@ -1,8 +1,13 @@
 <?php
+/**
+ * Dev tools
+ */
+const TOOLS_DIR = __DIR__ . '/tools/';
+
 function listTools(): array
 {
     $result = [];
-    if ($handle = opendir(__DIR__ . '/tools/')) {
+    if ($handle = opendir(TOOLS_DIR)) {
         while (false !== ($file = readdir($handle))) {
             if (substr(strrchr($file, '.'), 1) === 'php' && $file !== 'index.php') {
                 $result[] = str_replace('.php', '', $file);
@@ -12,7 +17,6 @@ function listTools(): array
     }
     return $result;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +54,7 @@ function listTools(): array
         <?php
         $route = (string)filter_input(INPUT_GET, 'tool', FILTER_SANITIZE_ENCODED);
         if ($route && in_array($route, listTools())) {
-            require_once __DIR__ . '/tools/' . $route . '.php';
+            require_once TOOLS_DIR . '/' . $route . '.php';
         } else {
             ?>
             <div class="twelve columns">^ click any button for tool</div>
