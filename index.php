@@ -50,7 +50,6 @@ function listTools(): array
 
 <div class="container">
     <div class="row">
-        <h1>Dev tools</h1>
         <?php
         $route = (string)filter_input(INPUT_GET, 'tool', FILTER_SANITIZE_ENCODED);
         if ($route && in_array($route, listTools())) {

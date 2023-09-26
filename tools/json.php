@@ -5,29 +5,22 @@ $json = '';
 if (isset($_POST['json_text']) && !empty($_POST['json_text'])) {
     $struct = json_decode($_POST['json_text'], true);
     $json = json_encode($struct, JSON_PRETTY_PRINT);
-    header('Content-Type: text/plain');
-    echo $json;
-    exit;
 }
 ?>
-<!DOCTYPE html>
+<h2>JSON beautifier</h2>
 
-<html>
-
-<head>
-    <title>JSON Formatter</title>
-</head>
-
-<body>
-
-<div>
-    <strong>Enter your shit json in here and click submit to get human readable json!</strong>
+<div class="row">
+    <div class="twelve columns">
+            <strong>Enter your shit json in here and click submit to get human readable json!</strong>
+    </div>
 </div>
-<form action="" method="POST">
-    <textarea name="json_text" style="width: 900px; height: 500px;"></textarea>
-    <input type="submit" />
-</form>
+<div class="row">
+    <div class="one-half column">
+        <form action="" method="POST">
+            <textarea name="json_text" class="u-full-width" placeholder="Paste json here" style="height: 600px"><?php echo $_POST['json_text']; ?></textarea>
+            <input type="submit" />
+        </form>
 
-</body>
-
-</html>
+    </div>
+    <div class="one-half column"><pre><code><?php echo $json; ?></code></pre></div>
+</div>
