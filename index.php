@@ -73,6 +73,9 @@ function listTools(): array
         } else {
             ?>
             <div class="twelve columns">click any button for tool ^</div>
+            <br><br>
+            <h2>Readme:</h2>
+            <pre><code><?php echo include 'README.md'; ?></code></pre>
             <?php
         }
         ?>
