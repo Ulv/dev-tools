@@ -46,6 +46,22 @@ spl_autoload_register(function ($class) {
         code {
             overflow-x: scroll;
         }
+
+        #error {
+            margin-top: 0.25rem;
+
+            display: none;
+            padding: 0.2em 0.6em 0.3em;
+            font-size: 115%;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25em;
+            background-color: #d9534f;
+        }
     </style>
     <script type="text/javascript" src="/js/func.js"></script>
 </head>
@@ -80,5 +96,6 @@ spl_autoload_register(function ($class) {
         ?>
     </div>
 </div>
+<script type="text/javascript" src="/js/jsonform.js"></script>
 </body>
 </html>
