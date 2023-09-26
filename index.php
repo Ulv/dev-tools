@@ -32,15 +32,10 @@ spl_autoload_register(function ($class) {
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Tools</title>
+    <title>DEV Tools</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-          crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
-          integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
-          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <style>
         .button {
             font-size: 10pt;
@@ -52,6 +47,7 @@ spl_autoload_register(function ($class) {
             overflow-x: scroll;
         }
     </style>
+    <script type="text/javascript" src="/js/func.js"></script>
 </head>
 <body>
 
@@ -87,16 +83,5 @@ spl_autoload_register(function ($class) {
         ?>
     </div>
 </div>
-<script>
-    function copy2Clipboard() {
-        let code = document.getElementById("code").innerText;
-
-        if (typeof navigator.clipboard !== "undefined") {
-            navigator.clipboard.writeText(code);
-        } else {
-            alert("Serve tools through HTTPS to use clipboard copy functionality")
-        }
-    }
-</script>
 </body>
 </html>

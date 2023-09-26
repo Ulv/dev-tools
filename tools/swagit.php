@@ -35,7 +35,7 @@ if ($input) {
             See <a
                     href="https://gist.github.com/connerbw/2c83cfa4a093fc1c1f9291189737cf25">code</a> for more
             info.</p>
-        <form name="form1" method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+        <form name="form1" method="post" action="">
             <div class="row">
                 <div class="six columns">
                     <label for="tabSize">Tab Width</label>
@@ -54,14 +54,3 @@ if ($input) {
         <?php
         if ($output) echo '<pre style="cursor:copy;"><code id="swaggerOutput" ondblclick="copySwagger();">' . htmlentities(trim($output)) . '</code></pre>';
         ?>
-    <script>
-        function copySwagger() {
-            const copyText = document.getElementById("swaggerOutput").textContent;
-            const textArea = document.createElement("textarea");
-            textArea.textContent = copyText;
-            document.body.append(textArea);
-            textArea.select();
-            document.execCommand("copy");
-            textArea.remove();
-        }
-    </script>
