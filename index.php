@@ -33,6 +33,13 @@ function listTools(): array
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
           integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
           crossorigin="anonymous"/>
+    <style>
+        .button {
+            font-size: 10pt;
+            line-height: 18pt;
+            height: 18pt;
+        }
+    </style>
 </head>
 <body>
 
@@ -59,7 +66,7 @@ function listTools(): array
             require_once TOOLS_DIR . '/' . $route . '.php';
         } else {
             ?>
-            <div class="twelve columns">^ click any button for tool</div>
+            <div class="twelve columns">click any button for tool ^</div>
             <?php
         }
         ?>
