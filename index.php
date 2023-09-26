@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/src/JsonTools.php';
 require_once __DIR__ . '/src/SwagIt.php';
+require_once __DIR__ . '/src/Timestamp.php';
 
 const TOOLS_DIR = __DIR__ . '/tools/';
 
