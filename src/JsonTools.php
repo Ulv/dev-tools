@@ -14,6 +14,12 @@ class JsonTools
         return $this->json;
     }
 
+    public function getPrintablePhpArray(): string
+    {
+        $decoded = json_decode($this->json, true);
+        return var_export($decoded, true);
+    }
+
     public function getBeautifiedJson(): string
     {
         $decoded = json_decode($this->json, true);
