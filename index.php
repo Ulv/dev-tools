@@ -3,6 +3,7 @@
  * Dev tools
  */
 require_once __DIR__ . '/src/JsonTools.php';
+require_once __DIR__ . '/src/SwagIt.php';
 
 const TOOLS_DIR = __DIR__ . '/tools/';
 
@@ -80,7 +81,7 @@ function listTools(): array
 <script>
     function copy2Clipboard() {
         let code = document.getElementById("code").innerText;
-       
+
         if (typeof navigator.clipboard !== "undefined") {
             navigator.clipboard.writeText(code);
         } else {
