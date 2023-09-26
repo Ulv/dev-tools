@@ -2,7 +2,7 @@
 /**
  * Dev tools
  */
-require_once __DIR__.'/src/JsonTools.php';
+require_once __DIR__ . '/src/JsonTools.php';
 
 const TOOLS_DIR = __DIR__ . '/tools/';
 
@@ -19,6 +19,7 @@ function listTools(): array
     }
     return $result;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +39,10 @@ function listTools(): array
             font-size: 10pt;
             line-height: 18pt;
             height: 18pt;
+        }
+
+        code {
+            overflow-x: scroll;
         }
     </style>
 </head>
@@ -72,5 +77,16 @@ function listTools(): array
         ?>
     </div>
 </div>
+<script>
+    function copy2Clipboard() {
+        let code = document.getElementById("code").innerText;
+       
+        if (typeof navigator.clipboard !== "undefined") {
+            navigator.clipboard.writeText(code);
+        } else {
+            alert("Serve tools through HTTPS to use clipboard copy functionality")
+        }
+    }
+</script>
 </body>
 </html>
