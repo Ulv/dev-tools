@@ -152,8 +152,6 @@ if ($input) {
 
 ?>
 
-<div class="container">
-    <div class="row">
         <h1>Swag It</h1>
         <p>A tool to help reverse engineer <a href="https://github.com/zircote/swagger-php">Swagger-PHP</a> annotations from an existing JSON payload.
             See <a
@@ -178,7 +176,6 @@ if ($input) {
         <?php
         if ($output) echo '<pre style="cursor:copy;"><code id="swaggerOutput" ondblclick="copySwagger();">' . htmlentities(trim($output)) . '</code></pre>';
         ?>
-    </div>
     <script>
         function copySwagger() {
             const copyText = document.getElementById("swaggerOutput").textContent;

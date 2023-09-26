@@ -1,3 +1,19 @@
+<?php
+function listTools(): array
+{
+    $result = [];
+    if ($handle = opendir(__DIR__ . '/tools/')) {
+        while (false !== ($file = readdir($handle))) {
+            if (substr(strrchr($file, '.'), 1) === 'php' && $file !== 'index.php') {
+                $result[] = str_replace('.php', '', $file);
+            }
+        }
+        closedir($handle);
+    }
+    return $result;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,26 +34,30 @@
     <div class="row">
         <div class="twelve columns">
             <a class="button button-primary" href="/">Home</a>
-            <a class="button button-primary" href="/?tool=swag">Swag It</a>
+            <?php
+            $tools = listTools();
+            foreach ($tools as $tool) {
+                echo "<a class='button button-primary' href='/?tool=$tool'>$tool</a>";
+            }
+            ?>
         </div>
     </div>
 </div>
 
-<hr>
-<?php
-$route = (string)filter_input(INPUT_GET, 'tool', FILTER_SANITIZE_ENCODED);
-
-if ($route && file_exists(__DIR__ . '/' . $route . '.php')) {
-    require_once __DIR__ . '/' . $route . '.php';
-} else {
-?>
-    <div class="container">
-        <div class="row">
-            <div class="twelve columns">^ click button for tool</div>
-        </div>
+<div class="container">
+    <div class="row">
+        <h1>Dev tools</h1>
+        <?php
+        $route = (string)filter_input(INPUT_GET, 'tool', FILTER_SANITIZE_ENCODED);
+        if ($route && in_array($route, listTools())) {
+            require_once __DIR__ . '/tools/' . $route . '.php';
+        } else {
+            ?>
+            <div class="twelve columns">^ click any button for tool</div>
+            <?php
+        }
+        ?>
     </div>
-<?php
-}
-?>
+</div>
 </body>
 </html>
